@@ -6,6 +6,10 @@ class ArticlePresenter extends BasePresenter {
 	function renderDetail($id) {
 		// tady bude načtení hlavního obsahu stránky - detailu článku
 		// kromě toho načteme i výběr článků pro postranní menu
-		$this->template->bestArticles = Article::findBests();
+	}
+	
+	function createComponentBest() {
+		require_once __DIR__ . '/controls/BestControl.php'; // @todo Refactor
+		return new BestControl;
 	}
 }

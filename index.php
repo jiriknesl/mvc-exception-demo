@@ -8,7 +8,8 @@ Debug::enable();
 $application = Environment::getApplication();
 $application->errorPresenter = 'Error';
 
-dibi::connect(array('driver' => 'sqlite3', 'file' => APP_DIR . '/models/data/blog-destroyed.sqlite'));
+dibi::connect(array('driver' => 'sqlite3', 'file' => APP_DIR . '/models/data/blog.sqlite'));
+// dibi::connect(array('driver' => 'sqlite3', 'file' => APP_DIR . '/models/data/blog-destroyed.sqlite'));
 
 $router = $application->getRouter();
 $router[] = new Route('robots.txt', array('presenter' => 'Feed', 'action' => 'robots'));
